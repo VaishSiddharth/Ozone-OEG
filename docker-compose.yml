@@ -76,7 +76,7 @@ services:
             - certs
         ports:
             - "8081:8080"
-            - "8444:8443"
+#            - "8444:8443"
         networks:
             - default
         restart: always
@@ -91,9 +91,9 @@ services:
                       -Djavax.net.ssl.keyStorePassword=kspass 
                       -Djavax.net.ssl.keyStoreType=pkcs12"
 
-        volumes:
-            -  key_trust-store-volume:/etc/openelis-global
-            - ./volume/tomcat/hapi_server.xml:/opt/bitnami/tomcat/conf/server.xml
+#        volumes:
+#            -  key_trust-store-volume:/etc/openelis-global
+#            - ./volume/tomcat/hapi_server.xml:/opt/bitnami/tomcat/conf/server.xml
         secrets:
              - source: hapi_application.yaml
 
